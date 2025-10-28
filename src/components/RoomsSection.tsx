@@ -152,6 +152,10 @@ const RoomsSection = () => {
     );
   };
 
+  const handleBookNow = () => {
+    window.open("https://wa.me/916282491916", "_blank");
+  };
+
   return (
     <section id="rooms" className="py-20 bg-cream relative overflow-hidden">
       {/* Background Decorations */}
@@ -294,6 +298,7 @@ const RoomsSection = () => {
                     <Button
                       size="sm"
                       className="bg-sunset text-forest-deep hover:bg-sunset/90 group/btn"
+                      onClick={handleBookNow}
                     >
                       Book Now
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />

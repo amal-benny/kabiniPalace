@@ -1,25 +1,25 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Facebook, 
-  Instagram, 
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Facebook,
+  Instagram,
   Twitter,
   Leaf,
   Heart,
-  ArrowUp
-} from 'lucide-react';
-import { Button } from './ui/button';
+  ArrowUp,
+} from "lucide-react";
+import { Button } from "./ui/button";
 
 const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const footerLinks = [
@@ -31,8 +31,8 @@ const Footer = () => {
         { name: "Facilities", href: "#facilities" },
         { name: "Rooms", href: "#rooms" },
         { name: "Gallery", href: "#gallery" },
-        { name: "Contact", href: "#contact" }
-      ]
+        { name: "Contact", href: "#contact" },
+      ],
     },
     {
       title: "Services",
@@ -42,8 +42,8 @@ const Footer = () => {
         { name: "Forest Trekking", href: "#facilities" },
         { name: "Restaurant", href: "#facilities" },
         { name: "Function Hall", href: "#facilities" },
-        { name: "Event Planning", href: "#contact" }
-      ]
+        { name: "Event Planning", href: "#contact" },
+      ],
     },
     {
       title: "Policies",
@@ -53,15 +53,27 @@ const Footer = () => {
         { name: "Privacy Policy", href: "/privacy" },
         { name: "Terms & Conditions", href: "/terms" },
         { name: "Safety Guidelines", href: "/safety" },
-        { name: "Eco-Friendly Practices", href: "/eco-friendly" }
-      ]
-    }
+        { name: "Eco-Friendly Practices", href: "/eco-friendly" },
+      ],
+    },
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "https://facebook.com/jlkabinipalace", label: "Facebook" },
-    { icon: Instagram, href: "https://instagram.com/jlkabinipalace", label: "Instagram" },
-    { icon: Twitter, href: "https://twitter.com/jlkabinipalace", label: "Twitter" }
+    {
+      icon: Facebook,
+      href: "https://facebook.com/jlkabinipalace",
+      label: "Facebook",
+    },
+    {
+      icon: Instagram,
+      href: "https://instagram.com/jlkabinipalace",
+      label: "Instagram",
+    },
+    {
+      icon: Twitter,
+      href: "https://twitter.com/jlkabinipalace",
+      label: "Twitter",
+    },
   ];
 
   return (
@@ -90,10 +102,13 @@ const Footer = () => {
               className="lg:col-span-2 space-y-6"
             >
               <div>
-                <h3 className="text-3xl font-serif font-bold mb-4">J&L Kabini Palace</h3>
+                <h3 className="text-3xl font-serif font-bold mb-4">
+                  J&L Kabini Palace
+                </h3>
                 <p className="text-cream/80 leading-relaxed mb-6">
-                  Experience rustic royalty where luxury meets nature. Nestled in the pristine 
-                  Kabini forest, we offer an unparalleled escape into serenity and comfort.
+                  Experience rustic royalty where luxury meets nature. Nestled
+                  in the pristine Kabini forest, we offer an unparalleled escape
+                  into serenity and comfort.
                 </p>
               </div>
 
@@ -103,23 +118,29 @@ const Footer = () => {
                   <MapPin className="w-5 h-5 text-sunset mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-cream/90">Kabini Forest Area</p>
-                    <p className="text-cream/70 text-sm">Karnataka, India - 571123</p>
+                    <p className="text-cream/70 text-sm">
+                      Karnataka, India - 571123
+                    </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-sunset flex-shrink-0" />
                   <div>
-                    <p className="text-cream/90">+91 98765 43210</p>
-                    <p className="text-cream/70 text-sm">24/7 Support Available</p>
+                    <p className="text-cream/90">+91 62824 91916</p>
+                    <p className="text-cream/70 text-sm">
+                      24/7 Support Available
+                    </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-sunset flex-shrink-0" />
                   <div>
-                    <p className="text-cream/90">info@jlkabinipalace.com</p>
-                    <p className="text-cream/70 text-sm">Quick Response Guaranteed</p>
+                    <p className="text-cream/90">info@jlkabini.com</p>
+                    <p className="text-cream/70 text-sm">
+                      Quick Response Guaranteed
+                    </p>
                   </div>
                 </div>
               </div>
@@ -153,26 +174,28 @@ const Footer = () => {
                 transition={{ duration: 0.6, delay: 0.3 + sectionIndex * 0.1 }}
                 className="space-y-6"
               >
-                <h4 className="text-lg font-semibold text-sunset">{section.title}</h4>
+                <h4 className="text-lg font-semibold text-sunset">
+                  {section.title}
+                </h4>
                 <ul className="space-y-3">
                   {section.links.map((link, linkIndex) => (
                     <motion.li
                       key={link.name}
                       initial={{ opacity: 0, x: -20 }}
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ 
-                        duration: 0.4, 
-                        delay: 0.5 + sectionIndex * 0.1 + linkIndex * 0.05 
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.5 + sectionIndex * 0.1 + linkIndex * 0.05,
                       }}
                     >
                       <a
                         href={link.href}
                         className="text-cream/70 hover:text-cream transition-colors duration-300 hover:translate-x-1 inline-block"
                         onClick={(e) => {
-                          if (link.href.startsWith('#')) {
+                          if (link.href.startsWith("#")) {
                             e.preventDefault();
                             document.querySelector(link.href)?.scrollIntoView({
-                              behavior: 'smooth'
+                              behavior: "smooth",
                             });
                           }
                         }}
@@ -203,7 +226,7 @@ const Footer = () => {
                 Subscribe for exclusive offers and updates from Kabini Palace
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
               <input
                 type="email"
@@ -235,12 +258,12 @@ const Footer = () => {
                 <span>Eco-friendly practices</span>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-6">
               <p className="text-sm text-cream/70">
                 © 2024 J&L Kabini Palace. All rights reserved.
               </p>
-              
+
               <Button
                 variant="ghost"
                 size="sm"
@@ -263,7 +286,12 @@ const Footer = () => {
       />
       <motion.div
         animate={{ y: [0, 10, 0], opacity: [0.4, 0.8, 0.4] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
         className="absolute top-32 left-1/4 w-2 h-2 bg-cream rounded-full"
       />
     </footer>
